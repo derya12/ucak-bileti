@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class biletFiyati {
+    public static void main(String[] args) {
+        double perkm=0.10,total,sonuc;
+        int km,age,yolculuktipi;
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Mesafeyi KM Cinsinden Giriniz:");
+        km = inp.nextInt();
+        System.out.print("Yolculuk Tipini Giriniz Giriniz:");
+        yolculuktipi = inp.nextInt();
+        System.out.print("Yaşınızı Giriniz:");
+        age = inp.nextInt();
+        total=perkm*km;
+        if (yolculuktipi==1){
+            if(age<=12){
+                sonuc=(total)-(total*(0.5));
+                System.out.print("Bilet Fiyatı :"+sonuc);
+
+            }
+            else if((age>=12)&&(age<=24)){
+                sonuc=(total)-(total*(0.1));
+                System.out.print("Bilet Fiyatı :"+sonuc);
+
+            }
+            else if(age>=65){
+                sonuc=(total)-(total*(0.3));
+                System.out.print("Bilet Fiyatı :"+sonuc);
+
+            }
+            else {
+                System.out.print("Bilet Fiyatı :"+total);
+            }
+        }
+        else if (yolculuktipi==2){
+            if(age<=12){
+                sonuc=(total)-((total*0.5)+(total*0.2));
+                System.out.print("Bilet Fiyatı :"+sonuc);
+
+            }
+            else if((age>=12)&&(age<=24)){
+                sonuc=(total)-((total*0.1)+(total*0.2));
+                System.out.print("Bilet Fiyatı :"+sonuc);
+
+            }
+            else if(age>=65){
+                sonuc=(total)-((total*0.3)+(total*0.2));
+                System.out.print("Bilet Fiyatı :"+sonuc);
+
+            }
+            else {
+                sonuc=(total)-(total*(0.2));
+                System.out.print("Bilet Fiyatı :"+sonuc);
+            }
+        }
+        else {
+            System.out.print("Geçerli Bir Yolculuk Tipi Giriniz!!!");
+        }
+    }
+}
